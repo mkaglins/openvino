@@ -279,7 +279,7 @@ public:
             const auto & m_input = pattern_map.at(input);
 
             // Case when input masks should be united instead of intersection
-            bool union_eltwise_type = ngraph::is_type<opset6::Multiply>(m_output.get_node_shared_ptr());
+            bool union_eltwise_type = false; // ngraph::is_type<opset6::Multiply>(m_output.get_node_shared_ptr());
 
             const auto & input_rank = m_input.get_partial_shape().rank().get_length();
             const auto & weights_rank = m_weights.get_partial_shape().rank().get_length();
